@@ -4,12 +4,28 @@
   padding: 0;
 }
 
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --keys-bg-color: #f7f7f7;
+}
+
 button {
   border: none;
   font-size: 30px;
   line-height: 65px;
   font-weight: 500;
   background-color: inherit;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.8);
+}
+
+input {
+  outline: none;
+  color: var(--primary-color);
 }
 
 html {
@@ -22,28 +38,46 @@ body {
   align-items: center;
   height: 100%;
   background-color: #e4e4e4;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  --primary-color: #fff;
+  --secondary-color: #22252d;
+  --keys-bg-color: #282b33;
+}
+
+body.dark {
+  background-color: #222522;
+  color: var(--primary-color);
 }
 
 .container {
-  max-width: 377px;
+  max-width: 350px;
   max-height: 800px;
-  background-color: #fff;
+  background-color: var(--secondary-color);
   overflow: hidden;
   border-radius: 40px;
+  transition: all 0.3s ease;
 }
 
 .theme {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
 
 .theme button {
-  margin: 10px;
+  padding: 7px;
+  font-size: 0;
+  line-height: 0;
 }
 
-.theme button img {
-  width: 30px;
-  height: 30px;
+svg path,
+svg circle,
+svg line {
+  stroke: var(--primary-color);
+  stroke-width: 2px;
 }
 
 .result {
@@ -51,15 +85,17 @@ body {
   flex-direction: column;
 }
 
-.result input {
+.result__field,
+.input__field {
   margin-top: 5px;
   margin: 5px auto 0;
   border: none;
-  background-color: #eee;
+  background-color: var(--secondary-color);
   width: 90%;
   font-size: 30px;
   text-align: right;
   padding: 0 15px;
+  transition: all 0.3s ease;
 }
 
 .input__field {
@@ -74,21 +110,21 @@ body {
 
 .keys {
   margin-top: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--secondary-color);
   border-radius: 40px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  transition: all 0.3s ease;
+
 }
 
 .key {
-  background-color: #f7f7f7;
+  background-color: var(--keys-bg-color);
+  color: var(--primary-color);
   width: 65px;
   height: 65px;
   margin: 10px;
   border-radius: 35%;
-}
-
-.key:active {
-  transform: scale(0.96);
+  transition: all 0.3s ease;
 }
