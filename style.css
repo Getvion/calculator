@@ -73,10 +73,14 @@ body.dark {
   line-height: 0;
 }
 
-svg path,
-svg circle,
-svg line {
+.svg__sun,
+.svg__moon {
   stroke: var(--primary-color);
+  stroke-width: 0.3px;
+}
+
+.svg__sun.active,
+.svg__moon.active {
   stroke-width: 2px;
 }
 
@@ -85,27 +89,17 @@ svg line {
   flex-direction: column;
 }
 
-.result__field,
-.input__field {
-  margin-top: 5px;
-  margin: 5px auto 0;
+.result__field {
+  margin: 20px auto 0;
+  padding: 0 10px;
   border: none;
   background-color: var(--secondary-color);
-  width: 90%;
-  font-size: 30px;
+  font-size: 40px;
+  line-height: 40px;
   text-align: right;
-  padding: 0 15px;
+  width: 99%;
+  height: 40px;
   transition: all 0.3s ease;
-}
-
-.input__field {
-  height: 30px;
-}
-
-.result__field {
-  font-size: 56px;
-  line-height: 60px;
-  height: 60px;
 }
 
 .keys {
@@ -116,7 +110,6 @@ svg line {
   justify-content: center;
   flex-wrap: wrap;
   transition: all 0.3s ease;
-
 }
 
 .key {
@@ -125,6 +118,12 @@ svg line {
   width: 65px;
   height: 65px;
   margin: 10px;
-  border-radius: 35%;
+  border-radius: 25px;
   transition: all 0.3s ease;
+}
+
+.key__operation--clean,
+.key__operation--equal {
+  width: 150px;
+  border-radius: 25px;
 }

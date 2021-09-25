@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="">
+<body class="dark">
   <div class="container">
     <div class="theme">
       <button class="theme__light">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="feather feather-sun">
+        <svg class="feather feather-sun svg__sun" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -28,43 +28,42 @@
         </svg>
       </button>
       <button class="theme__dark">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="feather feather-moon">
+        <svg class="feather feather-moon svg__moon" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
     </div>
     <div class="result">
-      <input type="text" class="input__field" placeholder="4 hours">
-      <input type="text" class="result__field">
+      <form name="form">
+        <input type="text" name="textview" readonly class="result__field" placeholder="5 hours">
+      </form>
     </div>
     <div class="keys">
 
-      <button class="key key__operation">C</button>
-      <button class="key key__operation">±</button>
-      <button class="key key__operation">%</button>
-      <button class="key key__operation">/</button>
+      <button class="key key__operation--clean" onclick="(clean())">C</button>
+      <button class="key key__operation--back" onclick="(removeOneSimbol())">←</button>
+      <button class="key key__operation" onclick="insert('/')">÷</button>
 
-      <button class="key key__number">7</button>
-      <button class="key key__number">8</button>
-      <button class="key key__number">9</button>
-      <button class="key key__operation">*</button>
+      <button class="key key__number" onclick="insert('7')">7</button>
+      <button class="key key__number" onclick="insert('8')">8</button>
+      <button class="key key__number" onclick="insert('9')">9</button>
+      <button class="key key__operation" onclick="insert('*')">*</button>
 
-      <button class="key key__number">4</button>
-      <button class="key key__number">5</button>
-      <button class="key key__number">6</button>
-      <button class="key key__operation">-</button>
+      <button class="key key__number" onclick="insert('4')">4</button>
+      <button class="key key__number" onclick="insert('5')">5</button>
+      <button class="key key__number" onclick="insert('6')">6</button>
+      <button class="key key__operation" onclick="insert('-')">-</button>
 
-      <button class="key key__number">1</button>
-      <button class="key key__number">2</button>
-      <button class="key key__number">3</button>
-      <button class="key key__operation">+</button>
+      <button class="key key__number" onclick="insert('1')">1</button>
+      <button class="key key__number" onclick="insert('2')">2</button>
+      <button class="key key__number" onclick="insert('3')">3</button>
+      <button class="key key__operation" onclick="insert('+')">+</button>
 
-      <button class="key key__operation">←</button>
-      <button class="key key__number">0</button>
-      <button class="key key__number">.</button>
-      <button class="key key__operation">=</button>
+      <button class="key key__number--zero" onclick="insert('0')">0</button>
+      <button class="key key__number" onclick="insert('.')">.</button>
+      <button class="key key__operation--equal" onclick="(equal())">=</button>
     </div>
 
   </div>
